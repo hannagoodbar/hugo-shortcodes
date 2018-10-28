@@ -1,0 +1,10 @@
+{{ with (.Get "day") -}}
+{{- if (eq "1" .) -}}{{ . }}<sup><small>st</small></sup>
+{{- else if (eq "2" .) -}}{{ . }}<sup><small>nd</small></sup>
+{{- else if (eq "3" .) -}}{{ . }}<sup><small>rd</small></sup>
+{{- else if (in "21 31" .) -}}{{ . }}<sup><small>st</small></sup>
+{{- else if (in "22" .) -}}{{ . }}<sup><small>nd</small></sup>
+{{- else if (in "23" .) -}}{{ . }}<sup><small>rd</small></sup>
+{{- else -}}{{ . }}<sup><small>th</small></sup>
+{{- end -}}
+{{- end -}}
